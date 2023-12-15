@@ -2,7 +2,10 @@
 <html>
   <head>
     <title>Sign up or sign in</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+    />
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -111,6 +114,7 @@
       }
       ul {
         padding: 0;
+        list-style: none;
       }
       #simplemodal-container .simplemodal-data {
         padding: 5px 8px;
@@ -183,15 +187,15 @@
         margin: 0 auto;
         width: 100%;
         height: 50px;
-        background-color: #FEC82F;
+        background-color: #fec82f;
         border-radius: 0.5rem;
         border: none;
-        color: #25282D;
+        color: #25282d;
         font-size: 1em;
         margin-top: 10px;
       }
       .buttons button:hover {
-        background-color: #FFF0C5;
+        background-color: #fff0c5;
         border-color: #204d74;
       }
       .buttons button[aria-disabled="true"] {
@@ -267,7 +271,7 @@
         border-radius: 8px;
         text-indent: 20px;
         background-color: #fff;
-        border-color: #E9EAEC;
+        border-color: #e9eaec;
       }
       #attributeList ul li input::-webkit-input-placeholder {
         text-indent: 20px;
@@ -296,10 +300,10 @@
       #attributeList ul li .attrEntry .verificationControlContent .sendCode {
         width: 100%;
         height: 50px;
-        background-color: #FEC82F;
+        background-color: #fec82f;
         color: #fff;
         border-radius: 0.5rem;
-        color: #25282D;
+        color: #25282d;
         font-weight: bold;
       }
       #attributeList
@@ -316,7 +320,7 @@
         .attrEntry
         .verificationControlContent
         .sendCode:hover {
-        background-color: #FFF0C5;
+        background-color: #fff0c5;
       }
       @media screen and (-ms-high-contrast: active) {
         #attributeList ul li .attrEntry .verify button,
@@ -1183,17 +1187,68 @@
           position: relative;
         }
       }
-      .required{
-        color: #C81E1D;
+      .required {
+        color: #c81e1d;
         font-size: 20px;
         margin-left: 5px;
       }
+      #GoogleExchange {
+        background-image: url("images/google.svg");
+      }
+
+      #MicrosoftAccountExchange {
+        background-image: url("images/microsoft.svg");
+      }
+      #FundacionGrupoSocial {
+        background-image: url("images/logoFundacion.svg");
+      }
+      #SignUpWithLogonNameExchange {
+        background-image: url("images/IdUser.svg");
+      }
       /* endinject */
     </style>
-
-   
   </head>
   <body>
+    <noscript
+      ><div id="no_js">
+        <div class="error_container">
+          <div>
+            <h1>We can't sign you in</h1>
+            <p>
+              Your browser is currently set to block JavaScript. You need to
+              allow JavaScript to use this service.
+            </p>
+            <p>
+              To learn how to allow JavaScript or to find out whether your
+              browser supports JavaScript, check the online help in your web
+              browser.
+            </p>
+          </div>
+        </div>
+      </div></noscript
+    >
+    <div id="no_cookie" class="no_display">
+      <div class="error_container">
+        <div>
+          <h1>We can't sign you in</h1>
+          <p>
+            Your browser is currently set to block cookies. You need to allow
+            cookies to use this service.
+          </p>
+          <p>
+            Cookies are small text files stored on your computer that tell us
+            when you're signed in. To learn how to allow cookies, check the
+            online help in your web browser.
+          </p>
+          <script nonce="">
+            if (!navigator.cookieEnabled)
+              document.getElementById("no_cookie").className = "";
+            if (typeof $diags !== "undefined")
+              $diags.initializationSuccessful = true;
+          </script>
+        </div>
+      </div>
+    </div>
     <div
       id="background_branding_container"
       data-tenant-branding-background-color="true"
@@ -1203,304 +1258,61 @@
         <div class="col-lg-6">
           <div class="panel panel-default">
             <div class="panel-body">
-              <img src="images/logo.svg" alt="Company Logo" data-tenant-branding-logo="true" />
+              <img
+                src="https://aadcdn.msftauthimages.net/dbd5a2dd-qsxrcriw-rwt6o-uz1jc8wpgq-n3zy4mllhq-kewm7k/logintenantbranding/0/bannerlogo?ts=638187258612654573"
+                alt="Company Logo"
+                data-tenant-branding-logo="true"
+              />
               <div id="api" data-name="SelfAsserted" role="main">
                 <div class="heading">
-                  <h1 role="heading">Detalles del usuario</h1>
-                </div>
-                <div class="buttons">
-                  <button id="cancel" aria-label="Cancelar" formnovalidate="">
-                    Cancelar
-                  </button>
+                  <h1 role="heading">Iniciar sesión</h1>
                 </div>
                 <div class="intro">
-                  <p>Proporcione los siguientes detalles.</p>
+                  <p>Suscribirse</p>
                 </div>
-                <form id="attributeVerification">
-                  <div
-                    id="requiredFieldMissing"
-                    class="error pageLevel"
-                    style="display: none"
-                    aria-hidden="true"
-                  >
-                    Falta un campo obligatorio. Rellene todos los campos
-                    necesarios y vuelva a intentarlo.
-                  </div>
-                  <div
-                    id="fieldIncorrect"
-                    class="error pageLevel"
-                    style="display: none"
-                    aria-hidden="true"
-                  >
-                    Hay uno o varios campos rellenados de forma incorrecta.
-                    Compruebe las entradas y vuelva a intentarlo.
-                  </div>
-                  <div
-                    id="captchaUnresolved"
-                    class="error pageLevel"
-                    style="display: none"
-                    aria-hidden="true"
-                  >
-                    El desafío captcha no se ha resuelto. Solucione el problema
-                    para continuar.
-                  </div>
-                  <div
-                    id="claimVerificationServerError"
-                    class="error pageLevel"
-                    style="display: none"
-                    aria-hidden="true"
-                  ></div>
-                  <div id="attributeList" class="attr">
-                    <ul>
-                      <li class="TextBox UserId_li">
-                        <div class="attrEntry">
-                          <div class="error itemLevel" role="alert"></div>
-                          <input
-                            id="UserId"
-                            class="textInput"
-                            type="text"
-                            placeholder="Nombre de usuario"
-                            aria-label="Nombre de usuario"
-                            pattern="^[a-zA-Z0-9]+[a-zA-Z0-9_-]*$"
-                            title="Nombre de usuario usado para iniciar sesión"
-                            aria-required="true"
-                            autofocus="autofocus"
-                            aria-disabled="true"
-                            disabled="disabled"
-                            tabindex="-1"
-                          /><span class="required">*</span
-                          ><a
-                            class="helpLink tiny"
-                            href="javascript:void(0)"
-                            data-help="Nombre de usuario usado para iniciar sesión"
-                            >¿Qué es esto?</a
-                          >
-                        </div>
-                      </li>
-                      <li class="Password newPassword_li">
-                        <div class="attrEntry">
-                          <div class="error itemLevel" role="alert"></div>
-                          <input
-                            id="newPassword"
-                            class="textInput"
-                            type="password"
-                            placeholder="Nueva contraseña"
-                            aria-label="Nueva contraseña"
-                            title="Escribe la nueva contraseña"
-                            autocomplete="new-password"
-                            aria-required="true"
-                            aria-disabled="true"
-                            disabled="disabled"
-                            tabindex="-1"
-                          /><span class="required">*</span
-                          ><a
-                            class="helpLink tiny"
-                            href="javascript:void(0)"
-                            data-help="Escribe la nueva contraseña"
-                            >¿Qué es esto?</a
-                          >
-                        </div>
-                      </li>
-                      <li class="Password reenterPassword_li">
-                        <div class="attrEntry">
-                          <div class="error itemLevel" role="alert"></div>
-                          <input
-                            id="reenterPassword"
-                            class="textInput"
-                            type="password"
-                            placeholder="Confirmar nueva contraseña"
-                            aria-label="Confirmar nueva contraseña"
-                            title="Confirmar contraseña nueva"
-                            autocomplete="new-password"
-                            aria-required="true"
-                            aria-disabled="true"
-                            disabled="disabled"
-                            tabindex="-1"
-                          /><span class="required">*</span
-                          ><a
-                            class="helpLink tiny"
-                            href="javascript:void(0)"
-                            data-help="Confirmar contraseña nueva"
-                            >¿Qué es esto?</a
-                          >
-                        </div>
-                      </li>
-                      <li
-                        class="VerificationControl emailVerificationControl_li"
+                <div role="form">
+                  <ul>
+                    <li>
+                      <button
+                        class="accountButton"
+                        id="SignUpWithLogonNameExchange"
+                        aria-label="Id. de usuario"
                       >
-                        <div class="attrEntry">
-                          <label
-                            id="emailVerificationControl_label"
-                            for="emailVerificationControl"
-                            class=""
-                          ></label>
-                          <div class="error itemLevel" role="alert"></div>
-                          <div
-                            class="verificationControlContent"
-                            id="emailVerificationControl"
-                          >
-                            <div class="verificationInfoText">
-                              <div
-                                id="emailVerificationControl_info_message"
-                                aria-hidden="true"
-                                role="alert"
-                                aria-label="La comprobación es obligatoria. Haga clic en el botón Enviar."
-                                style="display: none"
-                              >
-                                La comprobación es obligatoria. Haga clic en el
-                                botón Enviar.
-                              </div>
-                            </div>
-                            <div class="verificationSuccessText">
-                              <div
-                                id="emailVerificationControl_success_message"
-                                aria-hidden="true"
-                                role="alert"
-                                aria-label=""
-                                style="display: none"
-                              ></div>
-                            </div>
-                            <div class="verificationErrorText error">
-                              <div
-                                id="emailVerificationControl_error_message"
-                                aria-hidden="true"
-                                role="alert"
-                                aria-label=""
-                                style="display: none"
-                              ></div>
-                            </div>
-                            <ul>
-                              <li
-                                class="EmailBox email_li email"
-                                aria-hidden="false"
-                                style="display: inline"
-                              >
-                                <div class="attrEntry">
-                                  <div
-                                    class="error itemLevel"
-                                    role="alert"
-                                  ></div>
-                                  <input
-                                    id="email"
-                                    class="textInput"
-                                    type="email"
-                                    placeholder="Dirección de correo electrónico"
-                                    aria-label="Dirección de correo electrónico"
-                                    pattern="^[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"
-                                    title="Dirección de correo electrónico que se puede usar para contactarle."
-                                    aria-required="true"
-                                  /><span class="required">*</span
-                                  ><a
-                                    class="helpLink tiny"
-                                    href="javascript:void(0)"
-                                    data-help="Dirección de correo electrónico que se puede usar para contactarle."
-                                    >¿Qué es esto?</a
-                                  >
-                                </div>
-                              </li>
-                              <li
-                                class="TextBox emailVerificationCode_li VerificationCode"
-                                aria-hidden="true"
-                                style="display: none"
-                              >
-                                <div class="attrEntry">
-                                  <div
-                                    class="error itemLevel"
-                                    role="alert"
-                                  ></div>
-                                  <input
-                                    id="emailVerificationCode"
-                                    class="textInput"
-                                    type="text"
-                                    placeholder="Código de verificación"
-                                    aria-label="Código de verificación"
-                                    title="Se recibió un código de verificación en el correo electrónico."
-                                    aria-required="true"
-                                    autocomplete="off"
-                                    disabled=""
-                                  /><span class="required">*</span
-                                  ><a
-                                    class="helpLink tiny"
-                                    href="javascript:void(0)"
-                                    data-help="Se recibió un código de verificación en el correo electrónico."
-                                    >¿Qué es esto?</a
-                                  >
-                                </div>
-                              </li>
-                            </ul>
-                            <div
-                              class="working"
-                              style="display: none"
-                              aria-hidden="true"
-                            ></div>
-                            <div class="buttons">
-                              <button
-                                class="sendCode"
-                                id="emailVerificationControl_but_send_code"
-                                type="button"
-                                aria-label="Enviar código de verificación"
-                                aria-hidden="false"
-                                style="display: inline"
-                              >
-                                Enviar código de verificación</button
-                              ><button
-                                class="verifyCode"
-                                id="emailVerificationControl_but_verify_code"
-                                type="button"
-                                aria-label="Verificar código"
-                                aria-hidden="true"
-                                style="display: none"
-                              >
-                                Verificar código</button
-                              ><button
-                                class="sendNewCode"
-                                id="emailVerificationControl_but_send_new_code"
-                                type="button"
-                                aria-label="Enviar código nuevo"
-                                aria-hidden="true"
-                                style="display: none"
-                              >
-                                Enviar código nuevo</button
-                              ><button
-                                class="changeClaims"
-                                id="emailVerificationControl_but_change_claims"
-                                type="button"
-                                aria-label="Cambiar correo electrónico"
-                                aria-hidden="true"
-                                style="display: none"
-                              >
-                                Cambiar correo electrónico
-                              </button>
-                            </div>
-                          </div>
-                          <a class="helpLink tiny" href="javascript:void(0)"
-                            >¿Qué es esto?</a
-                          >
-                        </div>
-                      </li>
-                    </ul>
+                        Id. de usuario
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="accountButton"
+                        id="MicrosoftAccountExchange"
+                        aria-label="Microsoft"
+                      >
+                        Microsoft
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="accountButton"
+                        id="GoogleExchange"
+                        aria-label="Google"
+                      >
+                        Google
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="accountButton"
+                        id="FundacionGrupoSocial"
+                        aria-label="Fundacion Grupo Social"
+                      >
+                        Fundacion Grupo Social
+                      </button>
+                    </li>
+                  </ul>
+                  <div>
+                    <div></div>
                   </div>
-                  <div class="buttons">
-                    <button
-                      id="continue"
-                      type="submit"
-                      form="attributeVerification"
-                      aria-disabled="true"
-                      aria-label="Crear"
-                      tabindex="-1"
-                    >
-                      Crear
-                    </button>
-                  </div>
-
-                  <div
-                    class="verifying-modal"
-                    aria-live="assertive"
-                    aria-labelledby="verifying_blurb"
-                  >
-                    <div id="verifying_blurb"></div>
-                  </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
