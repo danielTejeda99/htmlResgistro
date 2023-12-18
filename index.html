@@ -272,6 +272,7 @@
         text-indent: 20px;
         background-color: #fff;
         border-color: #e9eaec;
+        margin-top: 4px;
       }
       #attributeList ul li input::-webkit-input-placeholder {
         text-indent: 20px;
@@ -345,10 +346,11 @@
         width: inherit;
         padding: 0 20px;
         height: 50px;
-        background-color: #296ec6;
-        color: #fff;
+        background-color: #fec82f;
+        color: #25282d;
         margin-right: 5px;
-        border-radius: 0.5rem;
+        border-radius: 8px;
+        font-weight: bold;
       }
       #attributeList ul li .attrEntry .verify .verifyButton:hover {
         background-color: #1662c7;
@@ -359,7 +361,7 @@
         .attrEntry
         .verificationControlContent
         .verifyCode:hover {
-        background-color: #1662c7;
+        background-color: #fff0c5;
       }
       #attributeList
         ul
@@ -381,14 +383,15 @@
       #attributeList ul li .attrEntry .verificationControlContent .sendNewCode {
         width: inherit;
         padding: 0 20px;
-        border: 0;
+        border: 2px solid #fec82f;
         font-size: 1em;
         height: 50px;
         right: 0;
         bottom: -38px;
-        background-color: #296ec6;
-        color: #fff;
-        border-radius: 0.5rem;
+        background-color: #ffffff;
+        color: #25282d;
+        border-radius: 8px;
+        font-weight: bold;
       }
       #attributeList
         ul
@@ -404,7 +407,7 @@
         .attrEntry
         .verificationControlContent
         .sendNewCode:hover {
-        background-color: #1662c7;
+        background-color: #fff0c5;
       }
       #attributeList ul li .attrEntry .verify .editButton {
         border: none;
@@ -420,12 +423,13 @@
         .attrEntry
         .verificationControlContent
         .changeClaims {
-        border: none;
-        color: #fff;
-        background-color: #296ec6;
+        border: 2px solid #fec82f;
+        color: #25282d;
+        background-color: #ffffff;
         width: 60%;
         height: 50px;
-        border-radius: 0.5rem;
+        border-radius: 8px;
+        font-weight: bold;
       }
       #attributeList ul li .attrEntry .verify .editButton:hover {
         background-color: #1662c7;
@@ -436,7 +440,7 @@
         .attrEntry
         .verificationControlContent
         .changeClaims:hover {
-        background-color: #1662c7;
+        background-color: #fff0c5;
       }
       #attributeList ul li .attrEntry .verify #email_ver_input_label {
         display: none !important;
@@ -999,13 +1003,12 @@
         overflow: hidden;
         padding: 0 50px;
         max-width: 380px;
-        border: 1px solid #E9EAEC;
+        border: 1px solid #e9eaec;
         background-color: #fff;
         -moz-border-radius: 0.5rem;
         -webkit-border-radius: 0.5rem;
         border-radius: 0.5rem;
         margin-top: 10px;
-        
       }
       .unified_container .row .panel-default #api .accountButton:hover {
         color: #fff;
@@ -1206,11 +1209,14 @@
       #SignUpWithLogonNameExchange {
         background-image: url("images/IdUser.svg");
       }
+      .emailVerificationCode {
+        background-color: #01a4ef;
+        margin-top: 50px !important;
+      }
       /* endinject */
     </style>
   </head>
   <body>  
-        
     <div
       id="background_branding_container"
       data-tenant-branding-background-color="true"
@@ -1225,56 +1231,7 @@
                 alt="Company Logo"
                 data-tenant-branding-logo="true"
               />
-              <div id="api" data-name="SelfAsserted" role="main">
-                <div class="heading">
-                  <h1 role="heading">Iniciar sesión</h1>
-                </div>
-                <div class="intro">
-                  <p>Suscribirse</p>
-                </div>
-                <div role="form">
-                  <ul>
-                    <li>
-                      <button
-                        class="accountButton"
-                        id="SignUpWithLogonNameExchange"
-                        aria-label="Id. de usuario"
-                      >
-                        Id. de usuario
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        class="accountButton"
-                        id="MicrosoftAccountExchange"
-                        aria-label="Microsoft"
-                      >
-                        Microsoft
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        class="accountButton"
-                        id="GoogleExchange"
-                        aria-label="Google"
-                      >
-                        Google
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        class="accountButton"
-                        id="FundacionGrupoSocial"
-                        aria-label="Fundacion Grupo Social"
-                      >
-                        Fundacion Grupo Social
-                      </button>
-                    </li>
-                  </ul>
-                  <div>
-                    <div></div>
-                  </div>
-                </div>
+              <div id="api" data-name="SelfAsserted" role="main">                
               </div>
             </div>
           </div>
